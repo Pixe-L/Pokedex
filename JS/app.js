@@ -67,7 +67,12 @@ const renderPokemonStats = (stats) => {
  infoStats.innerHTML = '';
  stats.forEach((stat) => {
   const statElement = document.createElement('div');
-  const statElementName = document.createElement('idv');
-  const statElementAmount = document.createElement('idv');
+  const statElementName = document.createElement('div');
+  const statElementAmount = document.createElement('div');
+  statElementName.textContent = stat.stat.name;
+  statElementAmount.textContent = stat.base_stat;
+  statElement.appendChild(statElementName);
+  statElement.appendChild(statElementAmount);
+  infoStats.appendChild(statElement);
  });
 };
