@@ -1,0 +1,11 @@
+:root {
+ --background: linear-gradient(90deg, #65addd 25%, #fffc5d 80%);
+}
+
+html {
+ scroll-behavior: smooth;
+ background: var(--background);
+}
+
+body {
+}
