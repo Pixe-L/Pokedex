@@ -1,4 +1,7 @@
 :root {
+ --redYT: #ff0000;
+ --face: #1877f2;
+ --twit: #1da1f2;
  --shadow: rgb(0, 0, 0);
  --pokecard: #000;
  --bgpokecard: rgb(255, 42, 42);
@@ -9,16 +12,20 @@
 
 html {
  scroll-behavior: smooth;
+ /* max-inline-size: 100vh; */
 }
 
 body {
  background: var(--background);
  font-family: var(--font-family);
+ /* max-inline-size: 100%; */
+ /* padding: 45px 20px 0; */
 }
 
 .form {
  width: 12.5rem;
- margin: 1.5rem auto;
+ margin: 1rem auto 0.5rem auto;
+ display: flex;
 }
 
 .search {
@@ -32,7 +39,7 @@ body {
 }
 
 .info-pokecard {
- position: relative;
+ position: static;
  height: fit-content;
  max-width: 18.75rem;
  border-radius: 0.25rem;
@@ -46,7 +53,7 @@ body {
 }
 
 .name {
- font-size: 30px;
+ font-size: 25px;
  font-weight: 700;
  padding: 0;
 }
@@ -99,4 +106,169 @@ body {
 .poke-img {
  width: 150px;
  border-radius: 50%;
+}
+
+.footer {
+ position: fixed;
+ width: 100%;
+ text-align: center;
+}
+
+.footer p {
+ margin-bottom: 2px;
+}
+
+.social-networks svg {
+ height: auto;
+ width: auto;
+ max-height: 30px;
+ max-width: 30px;
+ fill: var(--text);
+}
+
+.youtube:hover {
+ fill: var(--redYT);
+}
+
+.facebook:hover {
+ fill: var(--face);
+}
+
+.twitter:hover {
+ fill: var(--twit);
+}
+
+.button-floating {
+ background-color: white;
+ border: 1px solid black;
+ position: fixed;
+ z-index: 999;
+ border-radius: 50%;
+ bottom: 20px;
+ right: 25px;
+ padding: 10px;
+ transition: ease 0.3s;
+ animation: efect 1.2s infinite;
+}
+
+.button-floating:hover {
+ transform: scale(1.1);
+ transition: 0.3s;
+}
+
+.boton {
+ width: 80px;
+ transition: ease 1s;
+}
+
+@keyframes efect {
+ 0% {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+ }
+ 100% {
+  box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+ }
+}
+
+.header {
+ background-color: var(--face);
+ box-shadow: 3px 3px 3px 0 var(--shadow);
+ height: 3rem;
+ border-radius: 2px;
+ /* width: 100%; */
+ /* position: fixed;
+ width: 100%;
+ top: 0;
+ left: 0; */
+}
+
+.nav {
+ display: flex;
+ justify-content: space-between;
+ max-width: 62rem;
+ margin: 0 auto;
+}
+
+.menu-link {
+ text-decoration: none;
+ color: white;
+ border-radius: 3px;
+ padding: 4px;
+}
+
+.logo {
+ font-size: 30px;
+ font-weight: bold;
+ padding: 0 40px;
+ line-height: 3rem;
+}
+
+.nav-menu {
+ display: flex;
+ margin-right: 40px;
+ list-style: none;
+}
+
+.nav-item {
+ font-size: 18px;
+ margin: 0 10px;
+ text-transform: uppercase;
+ width: max-content;
+}
+
+.menu-link:hover {
+ background-color: #262335;
+ transition: 0.5s;
+}
+
+.hambur {
+ color: white;
+ background: none;
+ border: none;
+ font-size: 30px;
+ padding: 0 20px;
+ line-height: 60px;
+ display: none;
+}
+
+@media (max-width: 768px) {
+ .header {
+  height: 3rem;
+ }
+
+ .logo {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0 20px;
+  line-height: 3rem;
+ }
+
+ .nav-menu {
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-color: #262335;
+  position: fixed;
+  left: 0;
+  top: 3rem;
+  width: 100%;
+  padding: 20px 0;
+ }
+
+ .nav-item {
+  font-size: 18px;
+  margin: 0 10px;
+  text-transform: uppercase;
+  width: max-content;
+ }
+
+ .menu-link:hover {
+  background-color: #262335;
+  transition: 0.5s;
+ }
+}
+
+.wrapper {
+ min-height: calc(100vh - 155px);
+ /* background-color: coral; */
 }
