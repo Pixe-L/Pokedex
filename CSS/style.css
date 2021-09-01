@@ -1,13 +1,102 @@
 :root {
- --background: linear-gradient(90deg, #65addd 25%, #fffc5d 80%);
+ --shadow: rgb(0, 0, 0);
+ --pokecard: #000;
+ --bgpokecard: rgb(255, 42, 42);
+ --bgstats: rgb(127, 145, 144);
+ --background: linear-gradient(90deg, #3e8bff 25%, #fffc5d 80%);
+ --font-family: 'Poppins', sans-serif;
 }
 
 html {
  scroll-behavior: smooth;
+}
+
+body {
  background: var(--background);
+ font-family: var(--font-family);
 }
 
 .form {
  width: 12.5rem;
  margin: 1.5rem auto;
+}
+
+.search {
+ width: 100%;
+ padding: 10px;
+ font-weight: 700;
+ text-align: center;
+ outline: none;
+ border: 3px solid var(--bgpokecard);
+ border-radius: 4px;
+}
+
+.info-pokecard {
+ position: relative;
+ height: fit-content;
+ max-width: 18.75rem;
+ border-radius: 0.25rem;
+ color: var(--pokecard);
+ text-align: center;
+ padding: 10px;
+ margin: 0 auto;
+ background-color: var(--bgpokecard);
+ box-shadow: 10px 10px 10px 1px var(--shadow);
+ text-transform: uppercase;
+}
+
+.name {
+ font-size: 30px;
+ font-weight: 700;
+ padding: 0;
+}
+
+.name img {
+ position: relative;
+ bottom: 1px;
+}
+
+.name i {
+ display: inline-block;
+}
+
+.name span {
+ vertical-align: middle;
+}
+
+.name i img {
+ vertical-align: middle;
+}
+
+.poke-img-container {
+ position: relative;
+ width: 100%;
+ margin: 10px auto;
+}
+
+.poke-stats div {
+ display: flex;
+ justify-content: space-between;
+ align-content: space-between;
+ font-size: 1.25rem;
+ padding: 5px;
+ text-transform: uppercase;
+}
+
+.stats {
+ background-color: var(--bgstats);
+ /* border: 2px solid black; */
+ border-radius: 5px;
+}
+
+.poke-types div {
+ background-color: black;
+ border-radius: 5px;
+ margin: 5px;
+ padding: 5px;
+}
+
+.poke-img {
+ width: 150px;
+ border-radius: 50%;
 }

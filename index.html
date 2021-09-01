@@ -37,16 +37,28 @@
  </head>
  <body>
   <form class="form" action="" onsubmit="searchPokemon(event)">
-   <input type="text" name="pokemon" autocomplete="off" />
+   <input
+    class="search"
+    type="text"
+    name="pokemon"
+    autocomplete="off"
+    placeholder="¡Busca tu pokemon!"
+   />
   </form>
   <div info-poke-card class="info-pokecard">
-   <div info-poke-name>Pokedex</div>
+   <div info-poke-name class="name">
+    <i><img src="./images/pokeball.png" alt="pokeball" width="30" /></i>
+    <span>POKEDEX</span>
+    <i><img src="./images/pokeball.png" alt="pokeball" width="30" /></i>
+   </div>
    <div info-poke-img-container class="poke-img-container">
     <img info-poke-img class="poke-img" src="./images/pokemon.png" alt="No hay este pokemon" />
    </div>
    <div info-poke-id></div>
    <div info-poke-types class="poke-types"></div>
-   <div info-poke-stats class="poke-stats"></div>
+   <div class="stats">
+    <div info-poke-stats class="poke-stats"></div>
+   </div>
   </div>
 
   <script src="./JS/app.js"></script>

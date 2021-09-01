@@ -24,6 +24,7 @@ const typeColors = {
  water: '#0596c7',
  fire: '#ff675c',
  normal: '#b09398',
+ fairy: '#FF7EDB',
 };
 
 const searchPokemon = (event) => {
@@ -31,7 +32,8 @@ const searchPokemon = (event) => {
  const { value } = event.target.pokemon;
  fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`) //BUSQUEDA DEL POKEMON
   .then((data) => data.json())
-  .then((response) => renderPokemonData(response));
+  .then((response) => renderPokemonData(response))
+  .catch((err) => renderNotFound());
 };
 
 const renderPokemonData = (data) => {
@@ -40,7 +42,7 @@ const renderPokemonData = (data) => {
 
  infoName.textContent = data.name;
  infoImg.setAttribute('src', sprite);
- infoId.textContent = `No. ${data.id}`;
+ infoId.textContent = `N° ${data.id}`;
  setCardColor(types);
  renderPokemonTypes(types);
  renderPokemonStats(stats);
@@ -49,7 +51,7 @@ const renderPokemonData = (data) => {
 const setCardColor = (types) => {
  const colorOne = typeColors[types[0].type.name];
  const colorTwo = types[1] ? typeColors[types[1].type.name] : typeColors.default;
- infoImg.style.background = `linear-gradient(${colorTwo} 80%, ${colorOne} 80%)`;
+ infoImg.style.background = `linear-gradient(${colorTwo} 90%, ${colorOne} 90%)`;
  infoImg.style.backgroundSize = '5px 5px';
 };
 
@@ -75,4 +77,13 @@ const renderPokemonStats = (stats) => {
   statElement.appendChild(statElementAmount);
   infoStats.appendChild(statElement);
  });
+};
+
+const renderNotFound = () => {
+ infoName.textContent = 'No existe ;(';
+ infoImg.setAttribute('src', './images/pokeball.png');
+ infoImg.style.background;
+ infoTypes.innerHTML = '';
+ infoStats.innerHTML = '';
+ infoId.innerHTML = '';
 };
