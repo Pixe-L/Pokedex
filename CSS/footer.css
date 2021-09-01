@@ -1,0 +1,29 @@
+.footer {
+ position: fixed;
+ width: 100%;
+ text-align: center;
+}
+
+.footer p {
+ margin-bottom: 2px;
+}
+
+.social-networks svg {
+ height: auto;
+ width: auto;
+ max-height: 30px;
+ max-width: 30px;
+ fill: var(--text);
+}
+
+.youtube:hover {
+ fill: var(--redYT);
+}
+
+.facebook:hover {
+ fill: var(--face);
+}
+
+.twitter:hover {
+ fill: var(--twit);
+}

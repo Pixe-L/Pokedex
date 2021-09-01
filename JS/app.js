@@ -87,3 +87,12 @@ const renderNotFound = () => {
  infoStats.innerHTML = '';
  infoId.innerHTML = '';
 };
+
+// MENU HAMBURGUESA
+
+const navHambur = document.querySelector('.hambur');
+const navMenu = document.querySelector('.nav-menu');
+
+navHambur.addEventListener('click', () => {
+ navMenu.classList.toggle('nav-menu_visible');
+});
